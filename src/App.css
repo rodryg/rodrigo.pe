@@ -36,19 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* Estilos para el modo claro */
-@media (prefers-color-scheme: light) {
-  .App-header {
-    background-color: #ffffff;
-    color: #000000;
-  }
-}
-
-/* Estilos para el modo oscuro */
-@media (prefers-color-scheme: dark) {
-  .App-header {
-    background-color: #000000;
-    color: #ffffff;
-  }
-}

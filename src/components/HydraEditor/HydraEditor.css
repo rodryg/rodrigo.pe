@@ -1,0 +1,22 @@
+/* src/components/HydraEditor/HydraEditor.css */
+
+:root .cm-theme {
+  position: absolute;
+}
+
+:root .cm-content {
+  padding: 4px;
+}
+
+:root .cm-editor {
+  outline: none;
+}
+
+:root .cm-editor .cm-gutters {
+  display: none;
+}
+
+:root .cm-line {
+  max-width: fit-content;
+  background: hsla(50,23%,5%,0.6);
+}
