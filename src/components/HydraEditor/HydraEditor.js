@@ -50,6 +50,12 @@ const HydraEditor = () => {
   useEffect(() => {
     if (!hydraRef.current) {
       hydraRef.current = new Hydra();
+
+      const canvas = document.querySelector('canvas');
+      if (canvas) {
+        canvas.id = 'hydra-canvas';
+        canvas.classList.add('hydra-class');
+      }
     }
 
     try {
@@ -80,6 +86,7 @@ const HydraEditor = () => {
 
   return (
     <div>
+      <span>puedes modificar el fondo:</span>
       <CodeMirror
         value={code}
         extensions={extensions}

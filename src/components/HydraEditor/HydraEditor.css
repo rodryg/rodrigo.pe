@@ -1,7 +1,6 @@
 /* src/components/HydraEditor/HydraEditor.css */
 
 :root .cm-theme {
-  position: absolute;
 }
 
 :root .cm-content {
@@ -19,4 +18,11 @@
 :root .cm-line {
   max-width: fit-content;
   background: hsla(50,23%,5%,0.6);
+}
+
+#hydra-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

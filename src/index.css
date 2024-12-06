@@ -39,6 +39,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --margin: 1rem;
+}
+
+a {
+  color: white;
+}
+
+.highlight {
+  font-weight: bold;
 }
 
 code {
