@@ -1,10 +1,11 @@
 /* src/components/HydraEditor/HydraEditor.css */
 
 :root .cm-theme {
+  font-style: normal;
 }
 
 :root .cm-content {
-  padding: 4px;
+  /* padding: 4px; */
 }
 
 :root .cm-editor {

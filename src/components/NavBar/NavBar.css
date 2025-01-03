@@ -2,9 +2,10 @@
     display: flex;
     position: fixed;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     top: 0;
     width: calc(100% - var(--margin) * 4);
+    margin-block: var(--margin);
 }
 
 .navbar ul {
@@ -15,8 +16,12 @@
     justify-content: space-around;
 }
 
+.navbar ul li {
+    margin-inline: .5em;
+}
+
 .logo {
-    font-size: 1.25em;
+    font-size: var(--m-size);
     font-style: italic;
     line-height: 1.25em;
 }

@@ -9,6 +9,10 @@ function App() {
       <header className="App-header">
         <NavBar />
         <HydraEditor />
+        <p>
+          Viviendo en Barcelona<br />
+          programación, cine, protesta y arte<br />
+        </p>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
