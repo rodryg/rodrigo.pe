@@ -1,0 +1,15 @@
+.project {
+  margin: var(--margin) 0;
+  width: 100%;
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 2.4 / 1;
+  height: auto;
+}
+
+.project-title {
+  font-size: var(--m-size);
+  margin-block-start: var(--margin);
+}
