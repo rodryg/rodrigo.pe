@@ -3,6 +3,7 @@ import './App.css';
 import HydraEditor from './components/HydraEditor/HydraEditor';
 import NavBar from './components/NavBar/NavBar';
 import ProjectList from './components/ProjectList/ProjectList';
+import MediumPosts from './components/MediumPosts/MediumPosts';
 
 const pixel = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="white"/></svg>';
 
@@ -32,6 +33,7 @@ function App() {
           proyectos que me emocionan mucho!<br />
         </p>
         <ProjectList projects={collaborations} showTitles={false} />
+        <MediumPosts />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
