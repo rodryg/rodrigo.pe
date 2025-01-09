@@ -1,0 +1,11 @@
+.post-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.post-image {
+    width: calc(100% / 1.618);
+    aspect-ratio: var(--aspect-ratio);
+    height: auto;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './MediumPosts.css';
 
 const MediumPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -11,11 +12,18 @@ const MediumPosts = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        const posts = data.items.slice(0, 2).map(item => ({
-          title: item.title,
-          link: item.link,
-          thumbnail: item.thumbnail
-        }));
+        const posts = data.items.slice(0, 2).map(item => {
+          const parser = new DOMParser();
+          // Parsear el contenido HTML del post para extraer la primera imagen
+          // porque el servicio medium/rss2json no reconoce thumbnails
+          const doc = parser.parseFromString(item.content, 'text/html');
+          const img = doc.querySelector('img');
+          return {
+            title: item.title,
+            link: item.link,
+            thumbnail: img ? img.src : ''
+          };
+        });
         setPosts(posts); // Obtener los 2 últimos posts
       } catch (error) {
         console.error('Error fetching Medium posts:', error);
@@ -26,12 +34,12 @@ const MediumPosts = () => {
   }, []);
 
   return (
-    <div>
+    <div className="post-list">
       <h2>Últimos posts en Medium</h2>
       {posts.map((post, index) => (
-        <div key={index}>
+        <div className="post" key={index}>
           <a href={post.link} target="_blank" rel="noopener noreferrer">
-            <img src={post.thumbnail} alt={post.title} />
+            <img className="post-image" src={post.thumbnail} alt={post.title} />
             <p>{post.title}</p>
           </a>
         </div>

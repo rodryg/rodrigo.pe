@@ -42,6 +42,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   --margin: 1rem;
   --m-size: 1.25em;
+  --aspect-ratio: 2.4 / 1;
   font-style: italic;
   letter-spacing: -.05em;
   line-height: 1.25em;
