@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Project from '../Project/Project';
 import './ProjectList.css';
 
@@ -6,7 +7,9 @@ const ProjectList = ({ projects, showTitles = true }) => {
   return (
     <div className="project-list">
       {projects.map((project, index) => (
-        <Project key={index} title={showTitles ? project.title : ''} image={project.image} />
+        <Link key={index} to={`/project/${index}`}>
+          <Project title={showTitles ? project.title : ''} image={project.image} />
+        </Link>
       ))}
     </div>
   );
