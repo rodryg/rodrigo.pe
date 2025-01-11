@@ -6,9 +6,14 @@ import { javascript } from '@codemirror/lang-javascript';
 import Hydra from 'hydra-synth';
 import './HydraEditor.css';
 
+let hydraInstance = null;
+
 const HydraEditor = () => {
   const hydraRef = useRef(null);
-  const [code, setCode] = useState("osc(16, .25, 1.75)\n\t.pixelate()\n\t.rotate(.6)\n\t.modulatePixelate(noise(.1, .1), 10)\n\t.out()");
+  const [code, setCode] = useState(() => {
+    // Obtener el código del localStorage o usar el código por defecto
+    return localStorage.getItem('hydraCode') || "osc(16, .25, 1.75)\n\t.pixelate()\n\t.rotate(.6)\n\t.modulatePixelate(noise(.1, .1), 10)\n\t.out()";
+  });
   const [lastValidCode, setLastValidCode] = useState('');
 
   const extensions = [javascript({ jsx: true })];
@@ -48,9 +53,8 @@ const HydraEditor = () => {
   });
 
   useEffect(() => {
-    if (!hydraRef.current) {
-      hydraRef.current = new Hydra();
-
+    if (!hydraInstance) {
+      hydraInstance = new Hydra();
       const canvas = document.querySelector('canvas');
       if (canvas) {
         canvas.id = 'hydra-canvas';
@@ -73,6 +77,8 @@ const HydraEditor = () => {
       const func = new Function(newCode);
       func();
       setLastValidCode(newCode);
+      // Guardar el código en el localStorage
+      localStorage.setItem('hydraCode', newCode);
     } catch (error) {
         console.warn('Error executing Hydra code:', error);
         try {

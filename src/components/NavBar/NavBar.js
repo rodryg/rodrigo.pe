@@ -1,18 +1,21 @@
 // src/NavBar.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar() {
   return (
     <nav className="navbar">
-      <a href="/" className="logo" title="Rodrigo Yrigoyen Gonzales"><span className="highlight">rodrigo</span> <br/>yrigoyen <br/>gonzales</a>
+      <Link to="/" className="logo" title="Rodrigo Yrigoyen Gonzales">
+        <span className="highlight">rodrigo</span> <br/>yrigoyen <br/>gonzales
+      </Link>
       <ul>
-        <li><a href="#banner">code</a></li>
-        <li><a href="#about">soy</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#blog">blog</a></li>
-        <li><a href="#collaborations">collaborations</a></li>
-        <li><a href="#contact">contact</a></li>
+        <li><Link to="/#banner">code</Link></li>
+        <li><Link to="/#about">soy</Link></li>
+        <li><Link to="/#projects">projects</Link></li>
+        <li><Link to="/#blog">blog</Link></li>
+        <li><Link to="/#collaborations">collaborations</Link></li>
+        <li><Link to="/#contact">contact</Link></li>
       </ul>
     </nav>
   );
