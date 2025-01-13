@@ -10,7 +10,7 @@ function App() {
     let ticking = false;
 
     const updateStyles = () => {
-      const scrollValue = window.scrollY;
+      const scrollValue = Math.max(0, window.scrollY);
       const emInPixels = parseFloat(getComputedStyle(document.body).fontSize); // Obtiene el valor de 1em en píxeles
       const incrementStart = 0 + scrollValue / emInPixels; // Incrementa en em según el desplazamiento
       const incrementEnd = 0 + scrollValue / emInPixels; // Incrementa en em según el desplazamiento

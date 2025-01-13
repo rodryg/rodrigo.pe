@@ -1,9 +1,9 @@
 .navbar {
     display: flex;
-    position: fixed;
+    /* position: fixed; */
     justify-content: space-between;
     align-items: start;
-    top: 0;
+    /* top: 0; */
     width: calc(100% - var(--margin) * 4);
     margin-block: var(--margin);
 }
@@ -26,6 +26,6 @@
     line-height: 1.25em;
 }
 
-nav.navbar + * {
+/* nav.navbar + * {
     mask-image: linear-gradient(to bottom, transparent var(--start), black var(--end));
-}
+} */

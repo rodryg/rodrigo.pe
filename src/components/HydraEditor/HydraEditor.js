@@ -12,7 +12,8 @@ const HydraEditor = () => {
   const hydraRef = useRef(null);
   const [code, setCode] = useState(() => {
     // Obtener el código del localStorage o usar el código por defecto
-    return localStorage.getItem('hydraCode') || "osc(16, .25, 1.75)\n\t.pixelate()\n\t.rotate(.6)\n\t.modulatePixelate(noise(.1, .1), 10)\n\t.out()";
+    //return localStorage.getItem('hydraCode') || "osc(16, .25, 1.75)\n\t.pixelate()\n\t.rotate(.6)\n\t.modulatePixelate(noise(.1, .1), 10)\n\t.out()";
+    return localStorage.getItem('hydraCode') || "osc(1, .25, 1.75)\n\t.color(.5, .25, .25)\n\t//.contrast(4).brightness(1.125)\n\t.pixelate()\n\t.rotate(.6)\n\t.modulatePixelate(noise(.1, .1), 10)\n\t.out()\n\n// *prueba cambiar el número 1\n// de la primera línea por un 16\n// para variar el fondo ;)\n\n// *elaborado usando hydra.ojack.xyz";
   });
   const [lastValidCode, setLastValidCode] = useState('');
 

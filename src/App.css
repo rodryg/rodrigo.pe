@@ -3,7 +3,7 @@
 .App {
   text-align: initial;
   margin: 0 calc(var(--margin) * 2);
-  margin-block-start: 6em;
+  /* margin-block-start: 6em; */
 }
 
 .App-logo {
