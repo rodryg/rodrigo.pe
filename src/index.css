@@ -43,13 +43,18 @@ body {
   --margin: 1rem;
   --m-size: 1.25em;
   --aspect-ratio: 2.4 / 1;
+  --start: 0em;
+  --end: 0em;
   font-style: italic;
   letter-spacing: -.05em;
-  line-height: 1.25em;
 }
 
 a {
   color: white;
+}
+
+p {
+  line-height: 1.25em;
 }
 
 .highlight {

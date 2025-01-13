@@ -8,4 +8,5 @@
     width: calc(100% / 1.618);
     aspect-ratio: var(--aspect-ratio);
     height: auto;
+    display: block;
 }

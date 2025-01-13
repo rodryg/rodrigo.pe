@@ -21,6 +21,11 @@
   background: hsla(50,23%,5%,0.6);
 }
 
+:root .cm-tooltip {
+  color: #000000;
+  background-color: #ffffff;
+}
+
 #hydra-canvas {
   position: fixed;
   top: 0;

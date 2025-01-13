@@ -25,3 +25,7 @@
     font-style: italic;
     line-height: 1.25em;
 }
+
+nav.navbar + * {
+    mask-image: linear-gradient(to bottom, transparent var(--start), black var(--end));
+}

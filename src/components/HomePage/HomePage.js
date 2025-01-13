@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../NavBar/NavBar';
 import HydraEditor from '../HydraEditor/HydraEditor';
 import ProjectList from '../ProjectList/ProjectList';
 import MediumPosts from '../MediumPosts/MediumPosts';
@@ -21,7 +20,6 @@ const HomePage = () => {
   return (
     <div className="HomePage">
       <header className="App-header">
-        <NavBar />
         <HydraEditor />
         <p>
           Viviendo en Barcelona<br />

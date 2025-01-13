@@ -7,6 +7,7 @@
   width: 100%;
   aspect-ratio: var(--aspect-ratio);
   height: auto;
+  display: block;
 }
 
 .project-title {
