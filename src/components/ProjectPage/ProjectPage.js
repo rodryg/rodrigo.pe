@@ -13,17 +13,14 @@ const ProjectPage = () => {
   const project = projects[id];
 
   return (
-    <div>
-      <NavBar />
-      <div className="project-page">
-        <h1>{project.title}</h1>
-        <div className="project-images">
-          {project.images.map((image, index) => (
-            <img key={index} src={image} alt={`${project.title} ${index + 1}`} />
-          ))}
-        </div>
-        <p>{project.description}</p>
+    <div className="project-page">
+      <h1>{project.title}</h1>
+      <div className="project-images">
+        {project.images.map((image, index) => (
+          <img key={index} src={image} alt={`${project.title} ${index + 1}`} />
+        ))}
       </div>
+      <p>{project.description}</p>
     </div>
   );
 };
