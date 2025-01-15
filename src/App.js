@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
 import ProjectPage from './components/ProjectPage/ProjectPage';
 import NavBar from './components/NavBar/NavBar';
+import Contact from './components/Contact/Contact';
 import './App.css';
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/project/:id" element={<ProjectPage />} />
       </Routes>
+      <Contact />
     </div>
   );
 }

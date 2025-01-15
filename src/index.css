@@ -64,8 +64,8 @@ p {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  font-style: normal;
 }
-
 
 /* Estilos para el modo claro */
 @media (prefers-color-scheme: light) {
