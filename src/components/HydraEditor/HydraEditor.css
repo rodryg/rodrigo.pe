@@ -10,6 +10,12 @@
 
 :root .cm-editor {
   outline: none;
+  width: var(--col-ratio);
+}
+
+.hydra-editor-container {
+  width: 100%;
+  max-width: 100%;
 }
 
 :root .cm-editor .cm-gutters {

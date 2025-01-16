@@ -5,7 +5,7 @@
 }
 
 .post-image {
-    width: calc(100% / 1.618);
+    width: var(--col-ratio);
     aspect-ratio: var(--aspect-ratio);
     height: auto;
     display: block;

@@ -8,6 +8,7 @@
   aspect-ratio: var(--aspect-ratio);
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
 .project-title {

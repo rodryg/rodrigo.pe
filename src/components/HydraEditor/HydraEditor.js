@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
+import { EditorView } from '@codemirror/view';
 import { createTheme } from '@uiw/codemirror-themes';
 import { tags as t } from '@lezer/highlight';
 import { javascript } from '@codemirror/lang-javascript';
@@ -9,15 +10,17 @@ import './HydraEditor.css';
 let hydraInstance = null;
 
 const HydraEditor = () => {
-  const hydraRef = useRef(null);
   const [code, setCode] = useState(() => {
     // Obtener el código del localStorage o usar el código por defecto
     //return localStorage.getItem('hydraCode') || "osc(16, .25, 1.75)\n\t.pixelate()\n\t.rotate(.6)\n\t.modulatePixelate(noise(.1, .1), 10)\n\t.out()";
-    return localStorage.getItem('hydraCode') || "osc(1, .25, 1.75)\n\t.color(.5, .25, .25)\n\t//.contrast(4).brightness(1.125)\n\t.pixelate()\n\t.rotate(.6)\n\t.modulatePixelate(noise(.1, .1), 10)\n\t.out()\n\n// *prueba cambiar el número 1\n// de la primera línea por un 16\n// para variar el fondo ;)\n\n// *elaborado usando hydra.ojack.xyz";
+    return localStorage.getItem('hydraCode') || "osc(1, .25, 1.75)\n\t.color(.5, .25, .25)\n\t//.contrast(4).brightness(1.125)\n\t.pixelate()\n\t.rotate(.6)\n\t.modulatePixelate(\n\t\tnoise(.1, .1), 10)\n\t.out()\n\n// *prueba cambiar el número 1 de la primera línea por un 16 para variar el fondo ;)\n\n// *elaborado usando hydra.ojack.xyz";
   });
   const [lastValidCode, setLastValidCode] = useState('');
 
-  const extensions = [javascript({ jsx: true })];
+  const extensions = [
+    javascript({ jsx: true }),
+    EditorView.lineWrapping
+  ];
 
   const hydraTheme = createTheme({
     theme: 'rodrigo.pe',
@@ -56,11 +59,10 @@ const HydraEditor = () => {
   useEffect(() => {
     if (!hydraInstance) {
       hydraInstance = new Hydra();
-      const canvas = document.querySelector('canvas');
-      if (canvas) {
-        canvas.id = 'hydra-canvas';
-        canvas.classList.add('hydra-class');
-      }
+    }
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.id = 'hydra-canvas';
     }
 
     try {
@@ -92,7 +94,7 @@ const HydraEditor = () => {
   });
 
   return (
-    <div>
+    <div className="hydra-editor-container">
       <span>puedes modificar el fondo:</span>
       <CodeMirror
         value={code}
