@@ -5,7 +5,7 @@ import './ProjectList.css';
 
 const ProjectList = ({ projects, showTitles = true }) => {
   return (
-    <div className="project-list">
+    <div className="project-list" id={showTitles ? "collaborations" : "projects"}>
       {projects.map((project, index) => (
         <Link key={index} to={`/project/${index}`}>
           <Project title={showTitles ? project.title : ''} image={project.image} />

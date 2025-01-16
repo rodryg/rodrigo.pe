@@ -18,10 +18,10 @@ const collaborations = [
 
 const HomePage = () => {
   return (
-    <div className="HomePage">
+    <div className="HomePage" id="banner">
       <header className="App-header">
         <HydraEditor />
-        <p>
+        <p id="about">
           Viviendo en Barcelona<br />
           programación, cine, protesta y arte<br />
         </p>

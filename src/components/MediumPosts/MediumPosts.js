@@ -34,7 +34,7 @@ const MediumPosts = () => {
   }, []);
 
   return (
-    <div className="post-list">
+    <div className="post-list" id="blog">
       <h2>Últimos posts en Medium</h2>
       {posts.map((post, index) => (
         <div className="post" key={index}>

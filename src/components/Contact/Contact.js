@@ -4,7 +4,7 @@ import logo from '../../logo.svg';
 
 const Contact = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
             Es posible gracias a <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> + <a className="App-link" href="https://hydra.ojack.xyz" target="_blank" rel="noopener noreferrer">Hydra</a>

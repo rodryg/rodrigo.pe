@@ -19,7 +19,7 @@ const HydraEditor = () => {
 
   const extensions = [javascript({ jsx: true })];
 
-  const myTheme = createTheme({
+  const hydraTheme = createTheme({
     theme: 'rodrigo.pe',
     settings: {
       background: 'transparent',
@@ -97,7 +97,7 @@ const HydraEditor = () => {
       <CodeMirror
         value={code}
         extensions={extensions}
-        theme={myTheme}
+        theme={hydraTheme}
         options={{
           lineWrapping: true,
           lineNumbers: false
