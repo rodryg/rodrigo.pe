@@ -54,6 +54,11 @@ body {
   letter-spacing: -.05em;
 }
 
+h2 {
+  letter-spacing: -.05em;
+  line-height: 1.25em;
+}
+
 a {
   color: white;
 }

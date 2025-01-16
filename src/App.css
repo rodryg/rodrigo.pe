@@ -22,3 +22,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 768px) {
+  .App {
+    margin: 0 calc(var(--margin));
+  }
+}
