@@ -40,7 +40,7 @@ const MediumPosts = () => {
         <div className="post" key={index}>
           <a href={post.link} target="_blank" rel="noopener noreferrer">
             <img className="post-image" src={post.thumbnail} alt={post.title} />
-            <p>{post.title}</p>
+            <p className="post-title">{post.title}</p>
           </a>
         </div>
       ))}
