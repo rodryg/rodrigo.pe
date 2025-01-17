@@ -32,7 +32,8 @@
   background-color: #ffffff;
 }
 
-#hydra-canvas {
+/* #hydra-canvas { */
+body > canvas {
   position: fixed;
   top: 0;
   left: 0;

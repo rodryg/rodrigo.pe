@@ -56,13 +56,24 @@ const HydraEditor = () => {
     ],
   });
 
+  async function checkPermissions() {
+    try {
+      const audioPermission = await navigator.permissions.query({ name: 'microphone' });
+      const videoPermission = await navigator.permissions.query({ name: 'camera' });
+
+      const detectAudio = audioPermission.state === 'granted';
+      const detectVideo = videoPermission.state === 'granted';
+
+      return { detectAudio, detectVideo };
+    } catch (error) {
+      console.error('Error checking permissions:', error);
+      return { detectAudio: false, detectVideo: false };
+    }
+  }
+
   useEffect(() => {
     if (!hydraInstance) {
-      hydraInstance = new Hydra();
-    }
-    const canvas = document.querySelector('canvas');
-    if (canvas) {
-      canvas.id = 'hydra-canvas';
+      hydraInstance = new Hydra({ detectAudio: false, detectVideo: false });
     }
 
     try {
@@ -73,10 +84,40 @@ const HydraEditor = () => {
       }
   }, []);
 
-  const handleCodeChange = React.useCallback((value, viewUpdate) => {
+  const handleCodeChange = React.useCallback(async (value, viewUpdate) => {
+    const { detectAudio, detectVideo } = await checkPermissions();
     const newCode = value;
     setCode(newCode)
     try {
+      if (newCode.includes('s0.initCam') || newCode.includes('s0.initAudio')) {
+        
+        if (newCode.includes('s0.initAudio') && !detectAudio) {
+          if (!hydraInstance) {
+            hydraInstance = new Hydra({ detectAudio });
+          } else {
+            console.log("reniú audio");
+            const canvases = document.querySelectorAll('canvas');
+            canvases.forEach(canvas => {
+              document.body.removeChild(canvas);
+            });
+            hydraInstance = new Hydra({ detectAudio });
+          }
+        }
+
+        if (newCode.includes('s0.initCam') && !detectVideo) {
+          if (!hydraInstance) {
+            hydraInstance = new Hydra({ detectVideo });
+          } else {
+            console.log("reniú video");
+            const canvases = document.querySelectorAll('canvas');
+            canvases.forEach(canvas => {
+              document.body.removeChild(canvas);
+            });
+            hydraInstance = new Hydra({ detectVideo });
+          }
+        }
+
+      }
       const func = new Function(newCode);
       func();
       setLastValidCode(newCode);
@@ -106,7 +147,7 @@ const HydraEditor = () => {
         }}
         onChange={handleCodeChange}
       />
-      <div id="hydra-canvas"></div>
+      {/* <div id="hydra-canvas"></div> */}
     </div>
   );
 };
