@@ -5,6 +5,8 @@
   touch-action: none;
   user-select: none;
   transform-origin: center center;
+  top: 50vh;
+  left: 60vw;
 }
 
 .App-logo:active {
@@ -19,4 +21,12 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@media (max-width: 768px) {
+  .App-logo {
+    top: 120vh;
+    left: 50vw;
+    height: 30vmin;
+  }
 }

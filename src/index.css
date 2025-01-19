@@ -52,6 +52,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-style: italic;
   letter-spacing: -.05em;
+  overflow-x: hidden;
 }
 
 h2 {

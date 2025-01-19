@@ -1,3 +1,7 @@
+.post {
+    width: var(--col-ratio);
+}
+
 .post-list {
     display: flex;
     flex-direction: column;
@@ -5,8 +9,12 @@
 }
 
 .post-image {
-    width: var(--col-ratio);
+    width: 100%;
     aspect-ratio: var(--aspect-ratio);
     height: auto;
     display: block;
+}
+
+.post-title {
+    width: fit-content;
 }

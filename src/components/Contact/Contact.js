@@ -68,7 +68,10 @@ const Contact = () => {
             Es posible gracias a <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> + <a className="App-link" href="https://hydra.ojack.xyz" target="_blank" rel="noopener noreferrer">Hydra</a>
         </p>
         <p>
-            clona esta repo: <code>https://github.com/rodryg/rodrigo.pe</code>
+            clona esta repo:
+        </p>
+        <p>
+          <a href="https://github.com/rodryg/rodrigo.pe" target="_blank" rel="noopener noreferrer"><code>https://github.com/rodryg/rodrigo.pe</code></a>
         </p>
         <p>puedes contactarme en</p>
         <p>
