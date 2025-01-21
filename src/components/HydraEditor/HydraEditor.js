@@ -136,7 +136,6 @@ const HydraEditor = () => {
 
   return (
     <div className="hydra-editor-container">
-      <span>puedes modificar el fondo:</span>
       <CodeMirror
         value={code}
         extensions={extensions}

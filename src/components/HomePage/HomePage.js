@@ -2,7 +2,6 @@ import React from 'react';
 import HydraEditor from '../HydraEditor/HydraEditor';
 import ProjectList from '../ProjectList/ProjectList';
 import MediumPosts from '../MediumPosts/MediumPosts';
-import logo from '../../logo.svg';
 
 const pixel = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="white"/></svg>';
 
@@ -20,6 +19,7 @@ const HomePage = () => {
   return (
     <div className="HomePage" id="banner">
       <header className="App-header">
+        <span>puedes modificar el fondo:</span>
         <HydraEditor />
         <p id="about">
           Viviendo en Barcelona<br />

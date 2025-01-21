@@ -64,7 +64,8 @@ a {
   color: white;
 }
 
-p {
+p,
+span {
   line-height: 1.25em;
 }
 
