@@ -6,13 +6,13 @@ import MediumPosts from '../MediumPosts/MediumPosts';
 const pixel = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="white"/></svg>';
 
 const projects = [
-  { title: 'Project 1', image: pixel },
-  { title: 'Project 2', image: pixel },
+  { title: 'Project 1', image: pixel, video: null },
+  { title: 'Project 2', image: null, video: '/media/une.mp4' },
 ];
 
 const collaborations = [
-  { title: 'Collaboration 1', image: pixel },
-  { title: 'Collaboration 2', image: pixel },
+  { title: 'Collaboration 1', image: pixel, video: null },
+  { title: 'Collaboration 2', image: null, video: '/media/video4.mp4' },
 ];
 
 const HomePage = () => {

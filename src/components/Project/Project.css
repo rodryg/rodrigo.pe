@@ -11,7 +11,30 @@
   object-fit: cover;
 }
 
+.project-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: var(--margin);
+  aspect-ratio: var(--aspect-ratio);
+  object-fit: contain;
+  background-color: black;
+}
+
 .project-title {
   font-size: var(--m-size);
   margin-block-start: var(--margin);
+}
+
+video::-internal-media-controls-overlay-cast-button {
+  display: none;
+}
+video::-webkit-media-controls {
+  display: none;
+}
+video::-webkit-media-controls-enclosure {
+  display: none;
+}
+video::-webkit-media-controls-panel {
+  display: none;
 }

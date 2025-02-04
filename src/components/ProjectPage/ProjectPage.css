@@ -1,0 +1,17 @@
+p {
+    width: var(--col-ratio);
+}
+
+.custom {
+    width: 40%;
+    aspect-ratio: unset;
+    display: inline;
+    /* margin-inline-end: var(--margin); */
+}
+
+@media (max-width: 768px) {
+    .custom {
+        width: var(--golden-ratio);
+        display: block;
+    }    
+}

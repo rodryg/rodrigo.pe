@@ -8,7 +8,7 @@ const ProjectList = ({ projects, showTitles = true }) => {
     <div className="project-list" id={showTitles ? "projects" : "collab"}>
       {projects.map((project, index) => (
         <Link key={index} to={`/project/${index}`}>
-          <Project title={showTitles ? project.title : ''} image={project.image} />
+          <Project title={showTitles ? project.title : ''} image={project.image} video={project.video}/>
         </Link>
       ))}
     </div>

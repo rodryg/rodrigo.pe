@@ -55,7 +55,7 @@ body {
   overflow-x: hidden;
 }
 
-h2 {
+h1, h2 {
   letter-spacing: -.05em;
   line-height: 1.25em;
 }
