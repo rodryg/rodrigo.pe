@@ -25,16 +25,3 @@
   font-size: var(--m-size);
   margin-block-start: var(--margin);
 }
-
-video::-internal-media-controls-overlay-cast-button {
-  display: none;
-}
-video::-webkit-media-controls {
-  display: none;
-}
-video::-webkit-media-controls-enclosure {
-  display: none;
-}
-video::-webkit-media-controls-panel {
-  display: none;
-}

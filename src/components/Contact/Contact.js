@@ -12,8 +12,16 @@ const Contact = () => {
     const shiftY = e.clientY - imgElement.getBoundingClientRect().top;
 
     const moveAt = (pageX, pageY) => {
-      imgElement.style.left = `${pageX - shiftX}px`;
-      imgElement.style.top = `${pageY - shiftY}px`;
+      const newLeft = pageX - shiftX;
+      const newTop = pageY - shiftY;
+
+      const minLeft = -imgElement.offsetWidth / 2;
+      const minTop = -imgElement.offsetHeight / 2;
+      const maxLeft = window.innerWidth - imgElement.offsetWidth / 2;
+      const maxTop = document.documentElement.scrollHeight - imgElement.offsetHeight / 2;
+
+      imgElement.style.left = `${Math.min(Math.max(newLeft, minLeft), maxLeft)}px`;
+      imgElement.style.top = `${Math.min(Math.max(newTop, minTop), maxTop)}px`;
     };
 
     const onMouseMove = (e) => {
@@ -22,10 +30,15 @@ const Contact = () => {
 
     document.addEventListener('mousemove', onMouseMove);
 
-    document.onmouseup = () => {
-      document.removeEventListener('mousemove', onMouseMove);
-      document.onmouseup = null;
-    };
+    document.addEventListener(
+      'mouseup',
+      () => {
+        document.removeEventListener('mousemove', onMouseMove);
+      },
+      { once: true }
+    );
+
+    imgRef.current.addEventListener('mousedown', handleMouseDown);
   };
 
   const handleTouchStart = (e) => {
@@ -33,11 +46,19 @@ const Contact = () => {
     const imgElement = imgRef.current;
     const touch = e.touches[0];
     const shiftX = touch.clientX - imgElement.getBoundingClientRect().left;
-    const shiftY = touch.clientY - imgElement.getBoundingClientRect().top;
+    const shiftY = touch.pageY - (imgElement.getBoundingClientRect().top + window.scrollY);
 
     const moveAt = (pageX, pageY) => {
-      imgElement.style.left = `${pageX - shiftX}px`;
-      imgElement.style.top = `${pageY - shiftY}px`;
+      const newLeft = pageX - shiftX;
+      const newTop = pageY - shiftY;
+
+      const minLeft = -imgElement.offsetWidth / 2;
+      const minTop = -imgElement.offsetHeight / 2;
+      const maxLeft = window.innerWidth - imgElement.offsetWidth / 2;
+      const maxTop = document.documentElement.scrollHeight - imgElement.offsetHeight / 2;
+      
+      imgElement.style.left = `${Math.min(Math.max(newLeft, minLeft), maxLeft)}px`;
+      imgElement.style.top = `${Math.min(Math.max(newTop, minTop), maxTop)}px`;
     };
 
     const onTouchMove = (e) => {

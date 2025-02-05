@@ -6,7 +6,7 @@ const Project = ({ title, image, video }) => {
     <div className="project">
       {image && <img src={image} alt={title} className="project-image" />}
       {video && (
-        <video controls className="project-video" no-controls autoPlay muted loop>
+        <video className="project-video" playsInline autoPlay muted loop>
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

@@ -23,7 +23,7 @@ const ProjectPage = () => {
             {item.type === 'image' ? (
               <img src={item.src} alt={`${project.title} ${index + 1}`} className={`project-image ${item.class || ''}`} />
             ) : (
-              <video className={`project-video ${item.class || ''}`} autoPlay muted loop>
+              <video className={`project-video ${item.class || ''}`} playsInline autoPlay muted loop>
                 <source src={item.src} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
