@@ -52,6 +52,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-style: italic;
   letter-spacing: -.05em;
+}
+
+#root {
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -100,5 +104,6 @@ code {
 @media (max-width: 768px) {
   :root {
     --col-ratio: 100%;
+    --aspect-ratio: 1 / 1;
   }
 }

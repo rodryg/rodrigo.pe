@@ -4,10 +4,20 @@ import logo from '../../logo.svg';
 
 const Contact = () => {
   const imgRef = useRef(null);
+  
+  const disableContextMenuAndSelection = (element) => {
+    element.style.webkitTouchCallout = 'none';
+    element.style.webkitUserSelect = 'none';
+    element.style.userSelect = 'none';
+    element.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    }, { passive: false });
+  };
 
   const handleMouseDown = (e) => {
     e.preventDefault();
     const imgElement = imgRef.current;
+    disableContextMenuAndSelection(imgElement);
     const shiftX = e.clientX - imgElement.getBoundingClientRect().left;
     const shiftY = e.clientY - imgElement.getBoundingClientRect().top;
 
@@ -44,6 +54,7 @@ const Contact = () => {
   const handleTouchStart = (e) => {
     e.preventDefault();
     const imgElement = imgRef.current;
+    disableContextMenuAndSelection(imgElement);
     const touch = e.touches[0];
     const shiftX = touch.clientX - imgElement.getBoundingClientRect().left;
     const shiftY = touch.pageY - (imgElement.getBoundingClientRect().top + window.scrollY);
