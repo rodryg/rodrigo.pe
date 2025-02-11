@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import './ProjectPage.css';
 
 const projects = [
-  { title: 'Project 1', media: [{ type: 'image', src: 'image1.jpg' }, { type: 'image', src: 'image2.jpg' }], description: 'Description of Project 1' },
   { title: 'UNE Festival de Arte Impuro', media: [{ type: 'video', src: '/media/une.mp4' }, { type: 'video', src: '/media/une-afiche-digital.mp4', class: 'custom' }, { type: 'video', src: '/media/une-conv-general.mp4', class: 'custom' }], description: 'Une festival de arte impuro es un espacio para el encuentro de propuestas que cuestionan los límites de la práctica artística en el contexto actual, abriendo así oportunidades para el descubrimiento, el activismo y la co-creación en nuestras comunidades.' },
+  { title: 'Project 1', media: [{ type: 'image', src: 'image1.jpg' }, { type: 'image', src: 'image2.jpg' }], description: 'Description of Project 1' }
 ];
 
 const ProjectPage = () => {

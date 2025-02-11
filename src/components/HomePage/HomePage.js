@@ -6,8 +6,8 @@ import MediumPosts from '../MediumPosts/MediumPosts';
 const pixel = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="white"/></svg>';
 
 const projects = [
-  { title: 'Project 1', image: pixel, video: null },
-  { title: 'Project 2', image: null, video: '/media/une.mp4' },
+  { title: 'UNE Festival de arte impuro', image: null, video: '/media/une.mp4' },
+  { title: 'Desde el río hasta el mar, las canciones que necesitamos escuchar', image: null, video: '/media/cancion.mp4' },
 ];
 
 const collaborations = [
