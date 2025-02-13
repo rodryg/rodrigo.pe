@@ -1,19 +1,31 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './ProjectPage.css';
+import { slugify } from '../../utils';
 
 const projects = [
   { title: 'UNE Festival de Arte Impuro', media: [{ type: 'video', src: '/media/une.mp4' }, { type: 'video', src: '/media/une-afiche-digital.mp4', class: 'custom' }, { type: 'video', src: '/media/une-conv-general.mp4', class: 'custom' }], description: 'Une festival de arte impuro es un espacio para el encuentro de propuestas que cuestionan los límites de la práctica artística en el contexto actual, abriendo así oportunidades para el descubrimiento, el activismo y la co-creación en nuestras comunidades.' },
-  { title: 'Project 1', media: [{ type: 'image', src: 'image1.jpg' }, { type: 'image', src: 'image2.jpg' }], description: 'Description of Project 1' }
+  { title: 'Desde el río hasta el mar, las canciones que necesitamos escuchar', media: [{ type: 'video', src: '/media/cancion.mp4' }], description: 'Descripción de proyecto' },
+  { title: 'Triciclo.pe Triciclo Sur Andino', media: [{ type: 'image', src: '/media/triciclo.png' }], description: 'Descripción de proyecto' },
 ];
 
-const ProjectPage = () => {
-  const { id } = useParams();
-  const project = projects[id];
+const collaborations = [
+  { title: 'Juaku', media: [{ type: 'video', src: '/media/juaku.mp4' }], description: 'Descripción de colaboración' }
+];
+
+const ProjectPage = ({ type }) => {
+  const { title } = useParams();
+  const slugifiedTitle = slugify(title);
+  const projectList = type === 'project' ? projects : collaborations;
+  const project = projectList.find(p => slugify(p.title) === slugifiedTitle);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  if (!project) {
+    return <div>Project not found</div>;
+  }
 
   return (
     <div className="project-page">

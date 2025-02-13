@@ -45,7 +45,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/project/:id" element={<ProjectPage />} />
+        <Route path="/project/:title" element={<ProjectPage type="project" />} />
+        <Route path="/collab/:title" element={<ProjectPage type="collab" />} />
       </Routes>
       <Contact />
     </div>
