@@ -19,8 +19,7 @@ const HomePage = () => {
   return (
     <div className="HomePage" id="banner">
       <header className="App-header">
-        <span>*sitio en construcción pública</span>
-        <span>puedes modificar el fondo:</span>
+        <span>*sitio en construcción pública, <br />puedes modificar el fondo:</span>
         <HydraEditor />
         <p id="about">
           Viviendo en Barcelona<br />

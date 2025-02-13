@@ -5,7 +5,7 @@ import { slugify } from '../../utils';
 
 const projects = [
   { title: 'UNE Festival de Arte Impuro', media: [{ type: 'video', src: '/media/une.mp4' }, { type: 'video', src: '/media/une-afiche-digital.mp4', class: 'custom' }, { type: 'video', src: '/media/une-conv-general.mp4', class: 'custom' }], description: 'Une festival de arte impuro es un espacio para el encuentro de propuestas que cuestionan los límites de la práctica artística en el contexto actual, abriendo así oportunidades para el descubrimiento, el activismo y la co-creación en nuestras comunidades.' },
-  { title: 'Desde el río hasta el mar, las canciones que necesitamos escuchar', media: [{ type: 'video', src: '/media/cancion.mp4' }], description: 'Descripción de proyecto' },
+  { title: 'Desde el río hasta el mar, las canciones que necesitamos escuchar', media: [{ type: 'video', src: '/media/cancion.mp4' }], description: 'Proyecto de fondo interactivo para presentación colectiva "Desde el río hasta el mar, las canciones que necesitamos escuchar" en el Museo de Arte Contemporáneo de Barcelona.\nLa presentación congregaba a distintos artistas realizando lecturas y piezas musicales en el marco de las respuestas al genocidio de los pueblos palestinos durante los últimos años, principalmente en la Franja de Gaza.\nEl fondo interactivo está compuesto de un código web en JavaScript que detecta el ingreso de audio para generar una gráfica que simula el espectro del audio como olas de mar o siluetas de edificios modificándose.' },
   { title: 'Triciclo.pe Triciclo Sur Andino', media: [{ type: 'image', src: '/media/triciclo.png' }], description: 'Descripción de proyecto' },
 ];
 
@@ -27,6 +27,10 @@ const ProjectPage = ({ type }) => {
     return <div>Project not found</div>;
   }
 
+  const formattedDescription = project.description.split('\n').map((text, index) => (
+    <p key={index}>{text}</p>
+  ));
+
   return (
     <div className="project-page">
       <div className="project-media">
@@ -44,7 +48,7 @@ const ProjectPage = ({ type }) => {
           </React.Fragment>
         ))}
       </div>
-      <p>{project.description}</p>
+      {formattedDescription}
     </div>
   );
 };

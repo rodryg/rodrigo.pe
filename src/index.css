@@ -107,4 +107,8 @@ code {
     --col-ratio: 100%;
     --aspect-ratio: 1 / 1;
   }
+
+  span br {
+    display: none;
+  }
 }
