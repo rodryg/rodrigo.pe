@@ -97,7 +97,7 @@ const Contact = () => {
           onTouchStart={handleTouchStart}
         />
         <p>
-            Es posible gracias a <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> + <a className="App-link" href="https://hydra.ojack.xyz" target="_blank" rel="noopener noreferrer">Hydra</a>
+            Este sitio es posible gracias a <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> + <a className="App-link" href="https://hydra.ojack.xyz" target="_blank" rel="noopener noreferrer">Hydra</a>
         </p>
         <p>
             clona esta repo:

@@ -1,5 +1,5 @@
 .project {
-  margin: var(--margin) 0;
+  margin: var(--margin) 0 calc(var(--margin) * 2);
   width: 100%;
 }
 

@@ -3,7 +3,7 @@ import HydraEditor from '../HydraEditor/HydraEditor';
 import ProjectList from '../ProjectList/ProjectList';
 import MediumPosts from '../MediumPosts/MediumPosts';
 
-const pixel = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="white"/></svg>';
+// const pixel = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="white"/></svg>';
 
 const projects = [
   { title: 'UNE Festival de arte impuro', image: null, video: '/media/une.mp4' },
@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <div className="HomePage" id="banner">
       <header className="App-header">
-        <span>*sitio en construncción pública</span>
+        <span>*sitio en construcción pública</span>
         <span>puedes modificar el fondo:</span>
         <HydraEditor />
         <p id="about">
@@ -28,8 +28,8 @@ const HomePage = () => {
         </p>
         <ProjectList projects={projects} showTitles={true} />
         <p>
-          y tengo en tremendo gusto de colaborar en<br />
-          proyectos que me emocionan mucho!<br />
+          y me da mucho gusto de colaborar en<br />
+          proyectos emocionantes como Juaku:<br />
         </p>
         <ProjectList projects={collaborations} showTitles={false} />
         <MediumPosts />
