@@ -50,6 +50,8 @@ body {
   font-size: 1.5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--color);
   font-style: italic;
   letter-spacing: -.05em;
 }
@@ -66,7 +68,7 @@ h1, h2 {
 }
 
 a {
-  color: white;
+  color: var(--color);
 }
 
 p,
@@ -88,17 +90,17 @@ code {
 
 /* Estilos para el modo claro */
 @media (prefers-color-scheme: light) {
-  body {
-    background-color: #ffffff;
-    color: #000000;
+  :root {
+    --background-color: #ffffff;
+    --color: #000000;
   }
 }
 
 /* Estilos para el modo oscuro */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000000;
-    color: #ffffff;
+  :root {
+    --background-color: #000000;
+    --color: #ffffff;
   }
 }
 

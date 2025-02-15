@@ -28,8 +28,8 @@
 }
 
 :root .cm-tooltip {
-  color: #000000;
-  background-color: #ffffff;
+  background-color: var(--background-color);
+  color: var(--color);
 }
 
 /* #hydra-canvas { */
